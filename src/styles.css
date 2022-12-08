@@ -322,6 +322,7 @@ main {
         flex-direction: row;
         justify-content: space-between;
         padding: 148px 260px 148px 365px;
+        height: 100vh;
     }
 
     .right-background-img {
