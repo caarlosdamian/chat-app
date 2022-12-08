@@ -1,0 +1,29 @@
+/* - Pale Violet (sub-heading at the top of the app UI): hsl(276, 100%, 81%)
+- Moderate Violet (chat on the left): hsl(276, 55%, 52%)
+- Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%)
+- Grayish Blue (placeholder text): hsl(206, 6%, 79%)
+- Very Dark Desaturated Violet (main heading): hsl(271, 36%, 24%)
+- Dark Grayish Violet (paragraph): hsl(270, 7%, 64%) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    background: #F2F2F2;
+    position: relative;
+}
+
+.left-background-img {
+    background: linear-gradient(225deg, #E844FF 0%, #8739FF 100%);
+    border-radius: 255px;
+    width: 510px;
+    height: 1018px;
+    position: absolute;
+    top: -509px;
+    left: -322px;
+}
