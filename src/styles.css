@@ -5,7 +5,7 @@
 }
 
 main {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background: #f2f2f2;
     position: relative;
@@ -315,4 +315,32 @@ main {
     line-height: 28px;
     text-align: center;
     color: #a39da9;
+}
+
+@media (min-width: 600px) {
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 148px 260px 148px 365px;
+    }
+
+    .right-background-img {
+        top: 119px;
+        left: 1115px;
+    }
+
+    .left-background-img {
+        top: -320px;
+        left: -88px;
+    }
+
+    .information-container {
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 445px;
+    }
+
+    .information-description {
+        text-align: start;
+    }
 }
