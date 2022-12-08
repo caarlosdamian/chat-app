@@ -1,10 +1,3 @@
-/* - Pale Violet (sub-heading at the top of the app UI): hsl(276, 100%, 81%)
-- Moderate Violet (chat on the left): hsl(276, 55%, 52%)
-- Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%)
-- Grayish Blue (placeholder text): hsl(206, 6%, 79%)
-- Very Dark Desaturated Violet (main heading): hsl(271, 36%, 24%)
-- Dark Grayish Violet (paragraph): hsl(270, 7%, 64%) */
-
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +7,7 @@
 main {
     height: 100vh;
     width: 100vw;
-    background: #F2F2F2;
+    background: #f2f2f2;
     position: relative;
     padding: 64px;
     display: flex;
@@ -22,10 +15,11 @@ main {
     justify-content: flex-start;
     flex-direction: column;
     gap: 64px;
+    overflow: hidden;
 }
 
 .left-background-img {
-    background: linear-gradient(225deg, #E844FF 0%, #8739FF 100%);
+    background: linear-gradient(225deg, #e844ff 0%, #8739ff 100%);
     border-radius: 255px;
     width: 510px;
     height: 1018px;
@@ -35,17 +29,264 @@ main {
     z-index: 1;
 }
 
+.right-background-img {
+    background: linear-gradient(225deg, #E844FF 0%, #8739FF 100%);
+    mix-blend-mode: normal;
+    opacity: 0.03;
+    border-radius: 255px;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    z-index: 1;
+    width: 510px;
+    height: 1018px;
+    position: absolute;
+    top: 427px;
+    left: 188px;
+}
+
 .phone-container {
-    height: 483px;
-    width: 228px;
-    background: #FFFFFF;
+    height: 505px;
+    width: 247px;
+    background: #ffffff;
     box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
     border-radius: 30px;
     z-index: 2;
-    /* position: fixed; */
+    padding: 11px 9.5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.information-container{
+.notch-shape {
+    background: #ffffff;
+    border-radius: 0px 0px 14px 14px;
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    top: 0;
+    left: 55px;
+    z-index: 3;
+}
+
+.notch-container {
+    background: linear-gradient(225deg, #e844ff 0%, #8739ff 100%);
+    box-shadow: 0px 0px 13px rgba(62, 39, 83, 0.251202);
+    border-radius: 20px 20px 6px 6px;
+    width: 100%;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 16.5px 12px 15.5px;
+}
+
+.notch-left-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.arrow-left {
+    align-self: center;
+}
+
+.avatar-img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contact-name {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #ffffff;
+}
+
+.contact-status {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 9px;
+    color: #d99eff;
+}
+
+.chat-container {
+    border: 1px solid rgba(62, 39, 83, 0.0509178);
+    border-radius: 20px;
+    background: #f5f3f7;
+    width: 228px;
+    height: 483px;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-wrapper {
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-bubble {
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purple {
+    background: #eee5f4;
+    border-radius: 10px 10px 4px 10px;
+    color: #9341c8;
+    width: 128px;
+}
+
+.gray+.chat-bubble {
+    margin-top: 8px;
+}
+
+.gray {
+    background: #ffffff;
+    box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+    border-radius: 10px 10px 4px 10px;
+    color: #6e5d7e;
+    align-self: flex-end;
+    width: 80px;
+    height: 23px;
+}
+
+.large {
+    width: 128px;
+    height: 32px;
+}
+
+.chat-text {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 11px;
+    text-align: start;
+}
+
+.grid-photo-container {
+    align-self: flex-end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.grid-img {
+    box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.payment-container {
+    background: linear-gradient(225deg, #E844FF 0%, #8739FF 100%);
+    box-shadow: 0px 10px 5px -5px rgba(62, 39, 83, 0.045318);
+    border-radius: 10px 10px 4px 10px;
+    padding: 11px 16px 10px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 160px;
+}
+
+.payment-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+}
+
+.circle-container {
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    border: 1px solid #E472FF;
+}
+
+.payment-text {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 11px;
+    color: #FFFFFF;
+
+}
+
+.payment-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-price {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 11px;
+    color: #FFFFFF;
+}
+
+.input-text-container {
+    padding: 12px 4px 12px 20px;
+    background: #FFFFFF;
+    border-radius: 16.9544px;
+    max-height: 32px;
+    align-self: center;
+    width: 213px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.placeholder {
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: -0.0703125px;
+    color: #C5C9CC;
+
+}
+
+.arrow-container {
+    background: #3E2753;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+
+.information-container {
     width: 311px;
     height: 239px;
     display: flex;
@@ -53,25 +294,25 @@ main {
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
+    margin-bottom: 64px;
 }
 
 .information-header {
-    font-family: 'Rubik';
+    font-family: "Rubik";
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
     line-height: 47px;
     text-align: center;
-    color: #3E2753;
+    color: #3e2753;
 }
 
 .information-description {
-    font-family: 'Rubik';
+    font-family: "Rubik";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     text-align: center;
-    color: #A39DA9;
-
+    color: #a39da9;
 }
